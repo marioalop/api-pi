@@ -11,7 +11,4 @@ class WebServerSettings:
 
 class DatabaseSettings:
     DRIVER = os.getenv("DB_DRIVER", "sqlite")
-    CONNECTION_STRING = os.getenv(
-        "DB_CONNECTION_STRING"
-    )
-
+    CONNECTION_STRING = os.getenv("DB_CONNECTION_STRING")

@@ -80,6 +80,49 @@ Once the application is running (via Docker or locally), you can access the **AP
 
 ---
 
+## 🧪 Running Tests and Coverage
+
+### ✅ **Running Unit Tests**
+
+The project uses **pytest** for unit testing and **pytest-cov** for coverage reports.
+
+1. **Run all tests:**
+
+```bash
+pytest
+```
+
+2. **Run tests with coverage report:**
+
+```bash
+pytest --cov=src --cov-report=term-missing
+```
+
+### 📊 **Last Coverage Result:** 
+
+```
+---------- coverage: platform linux, python 3.10.12-final-0 ----------
+Name                                              Stmts   Miss  Cover   Missing
+-------------------------------------------------------------------------------
+src/app.py                                            6      6     0%   1-13
+src/application/character_creator.py                  7      0   100%
+src/application/character_inspector.py               14      0   100%
+src/application/character_remover.py                  7      0   100%
+src/cli.py                                            3      3     0%   1-4
+src/domain/entities/exceptions.py                    10      2    80%   3, 10
+src/domain/entities/schemas.py                       32      2    94%   25, 32
+src/domain/repositories/character_repository.py      12      0   100%
+src/settings.py                                       9      9     0%   1-14
+-------------------------------------------------------------------------------
+TOTAL                                               100     22    78%
+```
+
+### 📝 **Improving Coverage:**
+- Add tests for `src/app.py`, `src/cli.py`, and `src/settings.py`.
+- Ensure exception handling and Pydantic validation scenarios are covered.
+
+---
+
 ## 🏗️ Project Structure
 
 ```
@@ -93,6 +136,8 @@ Once the application is running (via Docker or locally), you can access the **AP
 ├── app.py                   # Flask application setup
 ├── docker-compose.yml       # Docker Compose configuration
 ├── requirements.txt         # Python dependencies
+├── tests                    # Unit tests with pytest
+│   └── application_test.py  # Tests for application layer
 └── README.md                # Project documentation
 ```
 
@@ -113,7 +158,7 @@ Once the application is running (via Docker or locally), you can access the **AP
 - 📝 **Pydantic** - Data validation and serialization
 - 💻 **Typer** - CLI for Python
 - 🐳 **Docker** & **Docker Compose** - Containerization
-
+- 🧪 **pytest** & **pytest-cov** - Testing and coverage reporting
 
 ---
 

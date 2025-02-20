@@ -25,7 +25,7 @@ class DatabaseInitializer:
 
     def _initialize_database(self):
         """
-        Initialize the database engine, create files if needed 
+        Initialize the database engine, create files if needed
             (SQLite), and create tables.
         """
         if self._database_url.startswith("sqlite"):

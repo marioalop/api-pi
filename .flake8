@@ -1,0 +1,47 @@
+[flake8]
+# Maximum allowed line length
+max-line-length = 120
+
+# List of checks to ignore:
+# E128: continuation line under-indented for visual indent
+# E129: visually indented line with same indent as next logical line
+# E203: whitespace before ':'
+# E266: too many leading '#' for block comment
+# E501: line too long
+# W503: line break before binary operator
+# W504: line break after binary operator
+# F403: 'from module import *' used
+# F841: local variable is assigned to but never used
+# E402: module level import not at top of file
+# E731: do not assign a lambda expression, use a def
+ignore = E128, E129, E203, E266, E501, W503, W504, F403, F841, E402, E731
+
+# Maximum allowed McCabe complexity
+max-complexity = 15
+
+# Per-file-ignores:
+# */__init__.py:
+#   F401: module imported but unused
+per-file-ignores =
+    */__init__.py: F401
+
+# Files and directories to exclude from checks:
+# migrations: Django migration files
+# .git: Git version control directory
+# __pycache__: Python cache files
+# manage.py: Django's command-line utility for administrative tasks
+# settings.py: Django settings file
+# wsgi.py: WSGI config for Django projects
+# */tests/*: test files and directories
+# */tests.py: Python test files
+# */conftest.py: pytest configuration files
+exclude =
+    migrations,
+    .git,
+    __pycache__,
+    manage.py,
+    settings.py,
+    wsgi.py,
+    */tests/*,
+    */tests.py,
+    */conftest.py

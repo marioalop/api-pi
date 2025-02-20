@@ -96,7 +96,7 @@ class OpenAPIBuilder:
     def build(self) -> Dict[str, Any]:
         """
         Build and return the OpenAPI JSON documentation.
-        
+
         Returns:
             Dict[str, Any]: The OpenAPI JSON documentation.
         """
@@ -107,9 +107,9 @@ class OpenAPIBuilder:
     ) -> Dict[str, Any]:
         """
         Convert a Pydantic model to an OpenAPI-compatible schema.
-        
+
         Args:
-            model (Type[BaseModel] | TypeAdapter[List[BaseModel]]): 
+            model (Type[BaseModel] | TypeAdapter[List[BaseModel]]):
                 The Pydantic model to convert.
 
         Returns:
@@ -134,7 +134,7 @@ class OpenAPIBuilder:
     def _add_model_schema(self, model: Type[BaseModel]) -> Dict[str, Any]:
         """
         Add a Pydantic model schema to the OpenAPI components.
-        
+
         Args:
             model (Type[BaseModel]): The Pydantic model to add.
 
