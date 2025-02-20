@@ -3,3 +3,6 @@ flask-swagger-ui==4.11.1
 pydantic==2.10.6
 SQLAlchemy==2.0.38
 typer==0.15.1
+Faker==36.1.1
+pytest==8.3.4
+pytest-cov==6.0.0
