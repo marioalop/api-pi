@@ -20,6 +20,8 @@ class CharacterCRUDApp(Flask):
         The constructor method
         """
         self._debug_mode = settings.DEBUG_MODE
+        self._host_url= settings.WebServerSettings.WEB_SERVER_HOST
+        self._port = settings.WebServerSettings.WEB_SERVER_PORT
         super().__init__(
             *args,
             **kwargs,
@@ -42,8 +44,8 @@ class CharacterCRUDApp(Flask):
         """
         super().run(
             *args,
-            host=settings.WebServerSettings.WEB_SERVER_HOST,
-            port=settings.WebServerSettings.WEB_SERVER_PORT,
+            host=self._host_url,
+            port=self._port,
             debug=self._debug_mode,
             **kwargs,
         )
