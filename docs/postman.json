@@ -1,0 +1,75 @@
+{
+    "info": {
+        "name": "Character CRUD API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Add Character",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"Luke Skywalker\",\n    \"height\": 172,\n    \"mass\": 77,\n    \"hair_color\": \"blond\",\n    \"skin_color\": \"fair\",\n    \"eye_color\": \"blue\",\n    \"birth_year\": 19\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/character/add",
+                    "host": ["{{base_url}}"],
+                    "path": ["character", "add"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get All Characters",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/character/getAll",
+                    "host": ["{{base_url}}"],
+                    "path": ["character", "getAll"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Character by ID",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/character/get/1",
+                    "host": ["{{base_url}}"],
+                    "path": ["character", "get", "1"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Delete Character by ID",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/character/delete/1",
+                    "host": ["{{base_url}}"],
+                    "path": ["character", "delete", "1"]
+                }
+            },
+            "response": []
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:5000"
+        }
+    ]
+}

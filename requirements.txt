@@ -1,0 +1,5 @@
+Flask==3.0.3
+flask-swagger-ui==4.11.1
+pydantic==2.10.6
+SQLAlchemy==2.0.38
+typer==0.15.1
