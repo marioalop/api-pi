@@ -20,7 +20,7 @@ class CharacterRepository(CharacterRepositoryInterface):
         """
         Constructor method.
         """
-        self.db_initializer = DatabaseInitializer(self.DATABASE_URL)
+        self._db_initializer = DatabaseInitializer(self.DATABASE_URL)
 
     def get_characters(self) -> List[CharacterPartialSchema]:
         """
@@ -29,7 +29,7 @@ class CharacterRepository(CharacterRepositoryInterface):
         Returns:
             List[CharacterPartialSchema]: A list of characters.
         """
-        session = self.db_initializer.get_session()
+        session = self._db_initializer.get_session()
         try:
             characters = session.query(Character).all()
             return [
@@ -49,7 +49,7 @@ class CharacterRepository(CharacterRepositoryInterface):
         Returns:
             CharacterSchema | None: The character if found, None otherwise.
         """
-        session = self.db_initializer.get_session()
+        session = self._db_initializer.get_session()
         try:
             character = (
                 session.query(Character)
@@ -72,7 +72,7 @@ class CharacterRepository(CharacterRepositoryInterface):
         Returns:
             CharacterSchema: The created character.
         """
-        session = self.db_initializer.get_session()
+        session = self._db_initializer.get_session()
         try:
             new_character = Character(**character.model_dump())
             session.add(new_character)
@@ -92,7 +92,7 @@ class CharacterRepository(CharacterRepositoryInterface):
         Returns:
             bool: True if the character was deleted, False otherwise
         """
-        session = self.db_initializer.get_session()
+        session = self._db_initializer.get_session()
         try:
             character = (
                 session.query(Character)

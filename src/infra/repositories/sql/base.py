@@ -18,7 +18,7 @@ class DatabaseInitializer:
         Args:
             database_url (str): The URL of the database
         """
-        self.database_url = database_url
+        self._database_url = database_url
         self._engine = None
         self._SessionLocal = None
         self._initialize_database()
@@ -28,13 +28,13 @@ class DatabaseInitializer:
         Initialize the database engine, create files if needed 
             (SQLite), and create tables.
         """
-        if self.database_url.startswith("sqlite"):
-            db_path = self.database_url.replace("sqlite:///", "")
+        if self._database_url.startswith("sqlite"):
+            db_path = self._database_url.replace("sqlite:///", "")
             if not os.path.exists(db_path):
                 os.makedirs(os.path.dirname(db_path), exist_ok=True)
                 open(db_path, "a").close()
 
-        self._engine = create_engine(self.database_url, echo=True)
+        self._engine = create_engine(self._database_url, echo=True)
         Base.metadata.create_all(self._engine)
         self._SessionLocal = sessionmaker(
             autocommit=False, autoflush=False, bind=self._engine
