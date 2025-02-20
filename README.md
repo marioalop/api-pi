@@ -7,6 +7,9 @@ This project is a **REST API** designed using the **Hexagonal Architecture**. It
 - 🌐 **Web Interface** (Flask-based API)
 - 💻 **Console Client** (using [Typer](https://typer.tiangolo.com/))
 - 📝 **API Documentation** with Swagger UI at the `/docs` endpoint
+- 🧪 **Unit Tests** with **pytest** and coverage reports
+- 🐳 **Docker Compose** for easy deployment
+- 🧑‍💻 **Postman Collection** for API testing in `/docs` folder
 
 ---
 
