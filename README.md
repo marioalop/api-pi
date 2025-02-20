@@ -117,10 +117,6 @@ src/settings.py                                       9      9     0%   1-14
 TOTAL                                               100     22    78%
 ```
 
-### 📝 **Improving Coverage:**
-- Add tests for `src/app.py`, `src/cli.py`, and `src/settings.py`.
-- Ensure exception handling and Pydantic validation scenarios are covered.
-
 ---
 
 ## 🏗️ Project Structure
