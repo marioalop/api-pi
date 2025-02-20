@@ -31,8 +31,6 @@ def character_data():
     )
 
 
-# ✅ Tests for CharacterCreator
-
 
 def test_create_character(mock_repository, character_data):
     creator = CharacterCreator(mock_repository)
@@ -43,8 +41,6 @@ def test_create_character(mock_repository, character_data):
     mock_repository.create_character.assert_called_once_with(character_data)
     assert result == character_data
 
-
-# ✅ Tests for CharacterInspector
 
 
 def test_list_characters(mock_repository, character_data):
@@ -78,8 +74,6 @@ def test_get_character_not_found(mock_repository):
     mock_repository.get_character.assert_called_once_with(999)
     assert str(exc_info.value) == "Character with ID 999 not found"
 
-
-# ✅ Tests for CharacterRemover
 
 
 def test_remove_character_success(mock_repository):
