@@ -49,6 +49,7 @@ export $(cat .env | xargs)
 Ensure you have **Docker** and **Docker Compose** installed. Then, simply run:
 
 ```bash
+cp env_example .env
 docker-compose up -d
 ```
 
