@@ -25,13 +25,21 @@ cd <repository_folder>
 
 ```bash
 python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\\Scripts\\activate
+source venv/bin/activate
 ```
 
 3. **Install dependencies**:
 
 ```bash
 pip install -r requirements.txt
+```
+
+4. **Set environment variables**:
+
+```bash
+cp env_example .env
+export $(cat .env | xargs)
+
 ```
 
 ---
@@ -67,12 +75,19 @@ python3 cli.py --help
 Example:
 
 ```bash
-python3 cli.py add-character --name "Luke" --height 172 --mass 77 --hair-color "blond" --skin-color "fair" --eye-color "blue" --birth-year 19
+python3 src/cli.py add-character --name "Luke" --height 172 --mass 77 --hair-color "blond" --skin-color "fair" --eye-color "blue" --birth-year 19
 ```
 
 ---
 
 ## 🌐 Accessing the Web Interface
+
+if you are deploying the application without Docker, you can run the Flask application directly:
+
+```bash
+python3 src/app.py
+```
+
 
 Once the application is running (via Docker or locally), you can access the **API documentation**:
 
