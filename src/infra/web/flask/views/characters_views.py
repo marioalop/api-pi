@@ -74,13 +74,20 @@ class CharacterDetailPOSTView(MethodView):
         character_creator = CharacterCreator(CharacterRepository())
         try:
             input_data = CharacterSchema.model_validate(request.json)
-            character = character_creator.create_character(input_data)
         except Exception as e:
             return (
                 jsonify(ResponseMessageSchema(message=str(e)).model_dump()),
                 HttpStatusCodes.BAD_REQUEST.value,
             )
-        
+        try:
+            character = character_creator.create_character(input_data)
+        except Exception as e:
+            return (
+                jsonify(ResponseMessageSchema(message=str(
+                    f"Character ID: {input_data.id} already exists"
+                    )).model_dump()),
+                HttpStatusCodes.BAD_REQUEST.value,
+            )
         return jsonify(character.model_dump()), HttpStatusCodes.CREATED.value
 
 
